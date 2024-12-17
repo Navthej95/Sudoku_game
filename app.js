@@ -252,7 +252,18 @@ if(Number(localStorage.getItem("gameWonLossToggleLocal"))==0){
             lightMode();
             document.getElementById("dark-mode-slider").setAttribute("title", "Nox!");
         }
-    }
+    }else{
+if(localStorage.getItem("darkModeToggleLocal")){
+if(Number(localStorage.getItem("darkModeToggleLocal"))==1){
+            darkModeToggle.checked = true;
+            document.getElementById("dark-mode-slider").setAttribute("title", "Lumos!");
+            darkMode()
+        }else{
+            darkModeToggle.checked = false;
+            lightMode();
+            document.getElementById("dark-mode-slider").setAttribute("title", "Nox!");
+        }
+
     if(localStorage.getItem("limitOfHintslocal")){
         hintBtn.setAttribute("limitOfHints", Number(localStorage.getItem("limitOfHintslocal")))
     }
